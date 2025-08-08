@@ -1,17 +1,8 @@
 # Java Coding practice
 
-## Sorting:
-  - Bubble Sort: Completed
-  - Selection Sort: Completed
-  - Insertion Sort: Completed
-  - Cyclic Sort: Completed
-  - Count Sort: Completed
-  - Radix Sort: Completed
-  - Merge Sort: Revise
-  - Quick Sort: Revise
-  - Heap Sort: No idea
+Check out the branches to get appropriate contents.
 
-Cheat Sheet:
+## Cheat Sheet:
 - Fibonacci Nth Term Formula:
   * The nth term of the Fibonacci sequence can be calculated using Binet's formula, which is an explicit closed-form expression. The formula is given by:
 
