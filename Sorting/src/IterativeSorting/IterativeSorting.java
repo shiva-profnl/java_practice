@@ -1,6 +1,7 @@
+package IterativeSorting;
 import java.util.Arrays;
 
-public class Sorting
+public class IterativeSorting
 {
     public static void main(String[] args) throws Exception {
         // int[] inpArr = {3,1,2,5,4}; //sample input 1.
@@ -169,19 +170,21 @@ public class Sorting
             // value of the index is increamented for each occurance in the original array
         }
 
-        System.out.println("Updated Count Array:" + Arrays.toString(countArray));
-
         for(int i=1; i<=maxElement; i++) {
             countArray[i]+=countArray[i-1];
-            // write an explanation for this
+            // this is to set the index of the elements in place
         }
-        System.out.println("Updated Count Array:" + Arrays.toString(countArray));
 
         int[] retArr = new int[n]; // new array in which the elements are added
 
         for(int i=n-1; i>=0; i--) {
             retArr[--countArray[arr[i]]] = arr[i];
-            // write an explanation for this
+            // traverse from reverse, since the count array will have 
+            // the largest position of the element in it, where
+            // the index of the count array represents the element in the original array
+            // and the value in the count array represents the number of occurances in the table.
+            // so we are adding the elements such that the order of the same elements are preserved by adding 
+            // them from right to left. 
         }
 
         return retArr;
