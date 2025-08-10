@@ -1,13 +1,13 @@
 package IterativeSorting;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class IterativeSortingUnmodularized {
     public static void main(String[] args) throws Exception {
-        int[] inpArr = {5,4,3,2,1}; //sample input 1.
+        // int[] inpArr = {5,4,3,2,1}; //sample input 1.
 
-        System.out.println("Array before bubble sort: "+ Arrays.toString(inpArr));
-        bubbleSort(inpArr);
-        System.out.println("Array after bubble sort: "+ Arrays.toString(inpArr));
+        // System.out.println("Array before bubble sort: "+ Arrays.toString(inpArr));
+        // bubbleSort(inpArr);
+        // System.out.println("Array after bubble sort: "+ Arrays.toString(inpArr));
 
         // System.out.println("Array before selection sort: "+ Arrays.toString(inpArr));
         // selectionSort(inpArr)
