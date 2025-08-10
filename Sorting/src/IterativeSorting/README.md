@@ -101,24 +101,21 @@
 
 ## Counting Sort:
 
-- **Note:** This algorithm gets the count of each element in an array/object, then creates a new array and adds the element in the new array the same number of times it occurs in the old array.
+- **Note:** This function will only sort non-negative integers and is adviced to use when the array as numbers range equal to the length of the array and frequency of all the numbers in the array as mentioned before has good amount of frequency.
 
-- Functionality: Uses an auxiliary array (count array) where the index represents the element value and the stored value at that index represents how many times it appears in the original array. Uses cumulative counts to place elements in the correct positions.
+- Functionality: This algorithm gets the count of each element in an array/object, then creates a new array and adds the element in the new array the same number of times it occurs in the old array.
 
 - Input: Unsorted array  
 - Output: New sorted array
 
 - Algorithm:
   1. Declare an integer `n` as the length of the array.
-  2. Declare an integer `maxElement` and set it to the first element of the array (used to determine the size of the count array).
-  3. Repeat for each element in the array:
-     1. If the current element is greater than `maxElement`, update `maxElement`.
-     2. **Note:** This is to get the highest element to create an array in which the index represents the number, and the value at that index represents the count of the number of times it appears in the original array.
-  4. Create an integer array `countArray` of size `maxElement+1`.
-  5. For each element in the original array:
+  2. Declare an integer `maxElement` and assign it to the value of element at index returned by the Max Element Index utility function. 
+  3. Create an integer array `countArray` of size `maxElement+1`. This will store the count of elements. Assign all the values of its elements to be 0,
+  4. For each element in the original array:
      1. Increment `countArray[element]` by 1.  
-        **Note:** The value at an index is incremented for each occurrence in the original array.
-  6. For each `i` from 1 to `maxElement`:
+        **Note:** The value at an index is incremented for each occurrence in the original array. (Index -> element in the OG array, value -> count of occurance in the OG array)
+  5. For each `i` from 1 to `maxElement`:
      1. Update `countArray[i] += countArray[i-1]`.  
         **Note:** This is to set the index of the elements in place.
   7. Create a new integer array `retArr` of size `n`.
@@ -134,9 +131,9 @@
 
 ## Radix Sort:
 
-- **Note:** Main logic of this algorithm: sort the array using counting sort for each digit, starting from the least significant digit. If there are mismatching number of digits, most significant digits of the smaller number are considered zero.
-
-- Functionality: Performs multiple passes of counting sort, each time on a specific digit position (units, tens, hundreds, etc.).
+- **Note:** This function will only sort non-negative integers and is adviced to use when the array as numbers range equal to the length of the array and frequency of all the numbers in the array as mentioned before has good amount of frequency.
+  
+- Main logic of this algorithm: sort the array using counting sort for each digit, starting from the least significant digit. If there are mismatching number of digits, most significant digits of the smaller number are considered zero.
 
 - Input: Unsorted array of non-negative integers  
 - Output: New sorted array
@@ -155,7 +152,6 @@
         1. Decrement `countArray[(arr[j] / i) % 10]` by 1 and place the element in `retArr` at that position.
      5. Copy all elements from `retArr` back to `arr`.  
         **Note:** After sorting by each digit, the current array after counting sort becomes the base array for the next digit pass.
-     6. Print the array for the current digit place: `"Final Array for i="+i+":"+Arrays.toString(retArr)`.
   5. Return `retArr`.
 
 - Best Case Time Complexity: **O(n)**  
