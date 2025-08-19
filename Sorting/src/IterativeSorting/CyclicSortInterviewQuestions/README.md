@@ -1,1 +1,0 @@
-Add algorithms with proper formatting here, for all the solutions in your code.
