@@ -10,7 +10,7 @@
   - Merge Sort: Revise
   - Quick Sort: Revise
   - Heap Sort: No idea
-
+  
 Cheat Sheet:
 - Fibonacci Nth Term Formula:
   * The nth term of the Fibonacci sequence can be calculated using Binet's formula, which is an explicit closed-form expression. The formula is given by:
