@@ -36,6 +36,31 @@ Cheat Sheet:
     $x_{k+1} = \frac{x_k + \tfrac{n}{x_k}}{2}$
 
   * Starting from an initial guess $x_0$, the sequence converges to $\sqrt{n}$.
+ 
+- Newton-Raphson Method for k-th Root:
+
+  * To find the k-th root of a number $n$ (i.e., solve $x = \sqrt[k]{n}$), we set up the equation:
+  
+    $f(x) = x^k - n = 0$
+
+  * Its derivative is:
+
+    $f'(x) = kx^{k-1}$
+
+  * Applying the Newton-Raphson formula:
+
+    $x_{m+1} = x_m - \frac{f(x_m)}{f'(x_m)}$
+
+    gives
+
+    $x_{m+1} = x_m - \frac{x_m^k - n}{k x_m^{k-1}}$
+
+  * Simplifying:
+
+    $x_{m+1} = \frac{(k-1)x_m + \tfrac{n}{x_m^{k-1}}}{k}$
+
+  * Starting with an initial guess $x_0$, the sequence $\{x_m\}$ converges to $\sqrt[k]{n}$, provided $x_0 > 0$.
+
 
     
 ​
