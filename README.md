@@ -1,62 +1,48 @@
-# Java Coding practice
+# Binary Search Algorithm
 
-## Sorting:
-  - Bubble Sort: Completed
-  - Selection Sort: Completed
-  - Insertion Sort: Completed
-  - Cyclic Sort: Completed
-  - Count Sort: Completed
-  - Radix Sort: Completed
-  - Merge Sort: Revise
-  - Quick Sort: Revise
-  - Heap Sort: No idea
-  
-Cheat Sheet:
-- Fibonacci Nth Term Formula:
-  * The nth term of the Fibonacci sequence can be calculated using Binet's formula, which is an explicit closed-form expression. The formula is given by:
+Binary Search is an efficient algorithm to find the position of a target element in a **sorted array**.  
+It works by repeatedly dividing the search interval in half.
 
-    $F_n = \frac{\varphi^n - (1 - \varphi)^n}{\sqrt{5}}, \quad \varphi = \frac{1 + \sqrt{5}}{2}$
+---
 
-- Akra-Bazzi Formula for finding time complexities of divide and conquer type recurrance relations:
+## Formula
 
-  * $T(x) = \Theta\left( x^p \left( 1 + \int_{1}^{x} \frac{g(u)}{u^{p+1}} \, \mathrm{d}u \right) \right), \quad \text{where } p \text{ satisfies } \sum_{i=1}^{k} a_i b_i^p = 1$
- 
-- Newton-Raphson Method for Finding Roots:
+Given:
+- A sorted array `nums` of length `n`
+- A target value `x`
 
-  * The Newton-Raphson iteration formula is derived from the first-order Taylor expansion and is given by:
+We maintain two pointers:
+- `low = 0`
+- `high = n - 1`
 
-    $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
+At each step, compute the middle index:
 
-  * Starting with an initial guess $x_0$, the method converges quadratically (for well-behaved functions) to a root of $f(x) = 0$, provided $f'(x) \neq 0$ near the root.
- 
-  * To find $\sqrt{n}$ using Newton-Raphson, we solve $f(x) = x^2 - n = 0$ with $f'(x) = 2x$.
-  
-  * The iteration formula becomes:
+\[
+mid = \left\lfloor \frac{low + high}{2} \right\rfloor
+\]
 
-    $x_{k+1} = \frac{x_k + \tfrac{n}{x_k}}{2}$
+- If `nums[mid] == x` → target found.  
+- If `nums[mid] < x` → search the right half:  
+  \[
+  low = mid + 1
+  \]
+- If `nums[mid] > x` → search the left half:  
+  \[
+  high = mid - 1
+  \]
 
-  * Starting from an initial guess $x_0$, the sequence converges to $\sqrt{n}$.
- 
-- Newton-Raphson Method for k-th Root:
+The search continues until:
+\[
+low > high
+\]
 
-  * To find the k-th root of a number $n$ (i.e., solve $x = \sqrt[k]{n}$), we set up the equation:
-  
-    $f(x) = x^k - n = 0$
+If this condition is reached, the target is **not present** in the array.
 
-  * Its derivative is:
+---
 
-    $f'(x) = kx^{k-1}$
+## Time Complexity
+- Best case: `O(1)` (if middle element is the target)  
+- Worst case: `O(\log n)`  
 
-  * Applying the Newton-Raphson formula:
-
-    $x_{m+1} = x_m - \frac{f(x_m)}{f'(x_m)}$
-
-    gives
-
-    $x_{m+1} = x_m - \frac{x_m^k - n}{k x_m^{k-1}}$
-
-  * Simplifying:
-
-    $x_{m+1} = \frac{(k-1)x_m + \tfrac{n}{x_m^{k-1}}}{k}$
-
-  * Starting with an initial guess $x_0$, the sequence $\{x_m\}$ converges to $\sqrt[k]{n}$, provided $x_0 > 0$.
+## Space Complexity
+- `O(1)` (iterative version)
