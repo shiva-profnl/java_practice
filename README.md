@@ -60,7 +60,3 @@ Cheat Sheet:
     $x_{m+1} = \frac{(k-1)x_m + \tfrac{n}{x_m^{k-1}}}{k}$
 
   * Starting with an initial guess $x_0$, the sequence $\{x_m\}$ converges to $\sqrt[k]{n}$, provided $x_0 > 0$.
-
-
-    
-​
