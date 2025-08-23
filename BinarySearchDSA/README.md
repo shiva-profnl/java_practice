@@ -6,4 +6,5 @@
  33. Search in Rotated Sorted Array: https://leetcode.com/problems/search-in-rotated-sorted-array/
  1095. Find in Mountain Array: https://leetcode.com/problems/find-in-mountain-array/
  410. Split Array Largest Sum: https://leetcode.com/problems/split-array-largest-sum/
+ 74. Search a 2D Matrix: https://leetcode.com/problems/search-a-2d-matrix/
  240. Search a 2D Matrix II: https://leetcode.com/problems/search-a-2d-matrix-ii/
